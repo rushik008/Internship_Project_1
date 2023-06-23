@@ -18,9 +18,14 @@ class _LoginPageState extends State<LoginPage> {
     String email = _emailController.text.trim();
     String password = _passwordController.text.trim();
 
-    if (email.isNotEmpty && password.isNotEmpty) {
-      Get.to(() => const HomePage(),
-          arguments: {'email': email, 'password': password});
+    if (email.isNotEmpty &&
+        password.isNotEmpty &&
+        email == 'rathodrushikr@gmail.com' &&
+        password == 'rathod') {
+      Get.to(() => const HomePage(), arguments: {
+        'email': email,
+        'password': password,
+      });
     } else {
       showDialog(
         context: context,
